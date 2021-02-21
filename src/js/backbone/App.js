@@ -1,15 +1,18 @@
 import Backbone from 'backbone';
 
-class App extends Backbone.View {
+export class App extends Backbone.View {
 
   constructor() {
     super();
-    this.el = '#todo-app';
+    this.el = $('#todo-app');
+    console.log(this.el);
+
     this.template = () => `
     <div>Hello World</div>`;
   }
 
   render() {
-    this.$el.html(this.template());
+    console.log(this.template());
+    this.el.html(this.template());
   }
 }

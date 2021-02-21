@@ -1,14 +1,15 @@
-// import { App } from './backbone/App';
+import { App } from './js/backbone/App';
 
-// new App();
+const app = new App();
+app.render();
 
-import React, { useState } from "react";
-import { render } from "react-dom";
+// import React, { useState } from "react";
+// import { render } from "react-dom";
 
-function App() {
-    const [state, setState] = useState("CLICK ME");
+// function App() {
+//     const [state, setState] = useState("CLICK ME");
 
-    return <button onClick={() => setState("CLICKED")}>{state}</button>;
-}
+//     return <button onClick={() => setState("CLICKED")}>{state}</button>;
+// }
 
-render(<App />, document.getElementById("todo-app"));
+// render(<App />, document.getElementById("todo-app"));
