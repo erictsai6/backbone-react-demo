@@ -4,14 +4,15 @@ import _ from 'underscore';
 import tpl from './App.html';
 
 export class App extends Backbone.View {
-
-  initialize(el) {
+  constructor(el) {
     this.el = $(el);
     this.model = new Backbone.Model({
-      name: 'hello'
+      count: 0
     });
-    console.log(this.model);
     this.template = _.template(tpl);
+  }
+
+  initialize() {    
     this.render();
   }  
 

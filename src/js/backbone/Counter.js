@@ -1,6 +1,6 @@
 import Backbone from 'backbone';
 
-class Counter extends Backbone.View {
+export class Counter extends Backbone.View {
   constructor() {
     super();
     this.model = new Backbone.Model({ count: 0 });
@@ -11,8 +11,12 @@ class Counter extends Backbone.View {
     };
     this.listenTo(this.model, "change", this.render);
   }
+  initialize() {
+    this.render();
+  }
   render() {
     this.$el.html(this.template(this.model.attributes));
+    return this;
   }
   buttonClick() {
     this.model.set({ count: this.model.get("count") + 1 });
