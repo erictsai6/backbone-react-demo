@@ -1,7 +1,6 @@
 import { App } from './js/backbone/App';
 
-const app = new App();
-app.render();
+const app = new App('#todo-app');
 
 // import React, { useState } from "react";
 // import { render } from "react-dom";

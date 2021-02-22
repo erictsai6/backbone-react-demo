@@ -11,6 +11,10 @@ module.exports = {
         exclude: /node_modules/,
         use: ["babel-loader"],
       },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
     ],
   },
   plugins: [
@@ -19,6 +23,6 @@ module.exports = {
     }),
   ],
   externals: {
-    jquery: 'jQuery',
+    jquery: "jQuery",
   },
 };

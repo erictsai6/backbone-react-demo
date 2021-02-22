@@ -1,18 +1,22 @@
 import Backbone from 'backbone';
+import _ from 'underscore';
+
+import tpl from './App.html';
 
 export class App extends Backbone.View {
 
-  constructor() {
-    super();
-    this.el = $('#todo-app');
-    console.log(this.el);
-
-    this.template = () => `
-    <div>Hello World</div>`;
-  }
+  initialize(el) {
+    this.el = $(el);
+    this.model = new Backbone.Model({
+      name: 'hello'
+    });
+    console.log(this.model);
+    this.template = _.template(tpl);
+    this.render();
+  }  
 
   render() {
-    console.log(this.template());
-    this.el.html(this.template());
+    this.el.html(this.template(this.model.toJSON()));
+    return this;
   }
 }
